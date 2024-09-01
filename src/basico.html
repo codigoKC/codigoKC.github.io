@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basico Three.js</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Enlaza tu archivo CSS -->
+    <script type="module" src="animation.js"></script>
+</head>
+<body>
+    
+    
+    <input type="checkbox" id="menu" class="menu-toggle">
+    <!-- Contenedor Principal -->
+    <div class="contenedor-principal contenedor-principal-basico">
+        <div class="menu-hamburguesa">
+            <label for="menu" class="menu-hamburguesa-label">
+                <div class="menu-hamburguesa-linea"></div>
+                <div class="menu-hamburguesa-linea"></div>
+                <div class="menu-hamburguesa-linea"></div>
+            </label>
+           
+        </div>
+        <!-- Menú de Navegación Lateral Izquierdo -->
+        <nav class="menu-lateral">
+            <div class="menu-lateral-temas">
+                <div class="menu-lateral-contenedor">
+                    <h3>Básico</h3>
+                    <ul class="menu-lateral-ul">
+                        <li><a href="#clase1" class="menu-lateral-a">Introducción</a></li>
+                        <li><a href="#clase2#" class="menu-lateral-a">Transform</a></li>
+                        <li><a href="#" class="menu-lateral-a">Geometry</a></li>
+                        <li><a href="#" class="menu-lateral-a">Ligths</a></li>
+                    </ul>  
+                </div>
+                <div class="menu-lateral-contenedor">
+                    <h3>Medio</h3>
+                    <ul class="menu-lateral-ul">
+                        <li><a href="#" class="menu-lateral-a">Introducción</a></li>
+                        <li><a href="#" class="menu-lateral-a">Transform</a></li>
+                        <li><a href="#" class="menu-lateral-a">Geometry</a></li>
+                        <li><a href="#" class="menu-lateral-a">Ligths</a></li>
+                    </ul>  
+                </div>
+                <div class="menu-lateral-contenedor">
+                    <h3>Avanzado</h3>
+                    <ul class="menu-lateral-ul">
+                        <li><a href="#" class="menu-lateral-a">Introducción</a></li>
+                        <li><a href="#" class="menu-lateral-a">Transform</a></li>
+                        <li><a href="#" class="menu-lateral-a">Geometry</a></li>
+                        <li><a href="#" class="menu-lateral-a">Ligths</a></li>
+                    </ul>  
+                </div>
+            </div>
+            <a href="#main">
+                <div class="logotipo">
+                    <img src="logo-codigo-60px.png" alt="Logotipo">
+                </div>
+            </a>
+          <!-- Espacio para el Logotipo -->
+           
+        </nav>
+        
+        <h1 class="titulo">Nivel Básico</h1>
+    <main class="contenido-central">
+       
+        <section class="temas-basico">
+          <ul class="temas-basico-ul">
+              <a href="#clase1" class="temas-basico-a">
+                  <li class="temas-basico-li">Configuración del entorno</li>
+              </a><a href="#clase2" class="temas-basico-a">
+                  <li class="temas-basico-li">Transform</li>
+              </a><a href="#clase3" class="temas-basico-a">
+                  <li class="temas-basico-li">Materials</li>
+              </a><a href="#clase4" class="temas-basico-a">
+                  <li class="temas-basico-li">Geometries</li>
+              </a><a href="#clase5" class="temas-basico-a">
+                  <li class="temas-basico-li">Ligths</li>
+              </a>
+          </ul>
+        </section>
+
+
+        <section class="clase1" id="clase1">
+
+            <h1 class="clase-titulo">Instalación y Configuración del entorno Clase 01</h1>
+            <div class="clase1-contenedor">
+                <div class="introduccion-lista">
+                    <h3>Resumén</h3>
+                    <ol>
+                        <li>Asegúrate de tener Node.js en la terminal de Visual Studio Code:
+                            <code>node -v</code>
+                        </li>
+                        <li>Inicializa el proyecto:
+                            <code>npm init -y</code>
+                        </li>
+                        <li>Instala Vite:
+                            <code>npm install vite</code>
+                        </li>
+                        <li>Ejecuta el servidor de desarrollo:
+                            <code>npm run dev</code>
+                        </li>
+                    </ol>
+                    <p>Si aún así no funciona el HTML:</p>
+                    <ul>
+                        <li>Asegúrate de que el archivo HTML esté en la carpeta raíz y no dentro de otra carpeta.</li>
+                        <li>O crea un archivo de configuración de Vite indicando que inicie en la carpeta donde guardas el HTML.</li>
+                    </ul>
+                    <ol start="5">
+                        <li>Instala el siguiente plugin antes de Vite:
+                            <code>npm install vite-plugin-restart --save-dev</code>
+                        </li>
+                        <li>Asegúrate de que Vite tenga en el root la carpeta en la que se encuentra el archivo HTML.</li>
+                    </ol>
+                </div>
+    
+    
+                <div class="clase1-pre-code">
+                    <div class="clase1-tema">
+                        <h2>Paso 1</h2>
+                        <p>Abre la terminal en VScode (Cntrl + j) y pon el siguiente codigo  </p>
+                            <pre><code> npm init -y </code></pre>
+                       
+                        
+                         <h2>Paso 2</h2>
+                        <p>Instala vite </p>
+                            <pre><code> npm install vite</code></pre>
+                        
+                        
+                        <h2>Paso 3</h2>
+                        <p>Instala el plugin de vite  
+                            <pre><code> npm install vite-plugin-restart --save-dev</code></pre>
+                        </p>
+                        <h2>Paso 4</h2>
+                        <p>Instala Three   </p>
+                            <pre><code> npm install Three</code></pre>
+                      
+                        <h2>Paso 5</h2>
+                        <p>Modifica el script package.json, elimina lo que tienes y añade este.  </p>
+                            <pre><code> 
+                                "scripts": {
+                                "dev": "vite",
+                                "build": "vite build"
+                              }, </code></pre>
+                      
+                        
+                        <h2>Paso 6</h2>
+                        <p>Crea un archivo vite.config.js en el directorio raíz y añadele el siguiente código,
+                        </p>
+                        <pre><code>
+                            import restart from 'vite-plugin-restart'
+                            
+                            export default {
+                                root: 'src/', // Sources files (typically where index.html is)
+                                publicDir: '../static/', // Path from "root" to static assets (files that are served as the root directory)
+                                server: {
+                                    host: true, // Open to local network and display URL
+                                    open: !('SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env) // Open if not in a sandbox environment
+                                },
+                                build: {
+                                    outDir: '../dist', // Output in the dist/ folder
+                                    emptyOutDir: true, // Empty the folder first
+                                    sourcemap: true // Add sourcemap
+                                },
+                                plugins: [
+                                    restart({ restart: [ '../static/**', ] }) // Restart server on static file change
+                                ],
+                            }
+                            </code></pre>
+                    </div>
+                </div>
+            </div>
+           
+
+        </section>
+         
+      
+       <section class="clase2" id="clase2">
+        <h1 class="clase-titulo">Transform Clase 02</h1>
+        
+        <div class="clase-contenedor">
+
+            <div class="introduccion introduccion-basico-02">
+                <p>Crearemos nuestro primer cube pero aún sin animaciones 
+                    también aprenderemos a crear grupos de objetos. </p>
+                  
+                        <p>Para crear nuestra primer escena debemos tener en cuenta el siguiente orden:</p>
+                        <ol class="transform-ol">
+                            <li>Crear el canvas</li>
+                            <li>Crear la escene</li>
+                            <li>Crear el objeto </li>
+                            <li>Crear la camara con sus medidas </li>
+                            <li>Crear el renderizador</li>
+                        </ol>
+                    
+            </div>
+            
+    
+            <canvas class="animation"></canvas>
+            <script type="module" src="animation.js"></script>
+           
+        </div>
+       <div class="clase2-pre-code">
+
+      <pre><code>
+        import * as THREE from 'three'
+
+// Canvas
+const canvas = document.querySelector('canvas.webgl')
+
+// Scene
+const scene = new THREE.Scene()
+
+/**
+ * Axes Helper
+ */
+const axesHelper = new THREE.AxesHelper(2)
+scene.add(axesHelper)
+
+/**
+ * Objects
+ */
+const group = new THREE.Group()
+group.scale.y = 2
+group.rotation.y = 0.2
+scene.add(group)
+
+const cube1 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube1.position.x = - 1.5
+group.add(cube1)
+
+const cube2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube2.position.x = 0
+group.add(cube2)
+
+const cube3 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube3.position.x = 1.5
+group.add(cube3)
+
+/**
+ * Sizes
+ */
+const sizes = {
+    width: 800,
+    height: 600
+}
+
+/**
+ * Camera
+ */
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+camera.position.z = 3
+// camera.lookAt(new THREE.Vector3(0, - 1, 0))
+scene.add(camera)
+
+/**
+ * Renderer
+ */
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+})
+renderer.setSize(sizes.width, sizes.height)
+renderer.render(scene, camera)
+      </code></pre>
+       </div>
+       </section>
+
+       <section class="clase3" id="clase3">
+        <h1 class="clase-titulo">Animation</h1>
+       </section>
+       <div class="clase-contenedor">
+
+        <p>En esta clase daremos vida al cubo mediante un bucle for</p>
+       
+
+       </div>
+
+      </main>
+    </div>
+</body>
+</html>

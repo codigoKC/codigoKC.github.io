@@ -1,0 +1,412 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0%;
+    margin: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(102, 51, 153, 0.5);
+}
+
+.contenedor-principal{
+    width: 100vw;
+    height: 100vh; 
+    color: white;
+   padding: 2%;
+}
+/* ----------------------------- MENU DE NAVEGACION -----------------------------*/
+/* Estilos del contenedor principal del menú lateral */
+.menu-lateral {
+    width: 100%;
+    height: 7%;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    align-items: start;
+    z-index: 200;
+}
+
+/* Estilos del menú lateral */
+.menu-lateral-temas {
+    display: none; /* Inicialmente oculto */
+    position: relative;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+}
+
+/* Estilos del contenedor de encabezados del menú lateral */
+.menu-lateral-contenedor > h3 {
+    background-color: rgb(58, 32, 82);
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+/* Lista dentro del menú lateral */
+.menu-lateral-ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(102, 51, 153, 0.663);
+}
+
+/* Elementos de la lista del menú lateral */
+.menu-lateral-ul > li {
+    list-style-type: none;
+    background-color: rgba(115, 12, 218, 0.5);
+    margin: 2px;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Estilos de los enlaces dentro del menú lateral */
+.menu-lateral-a {
+    display: block;
+    text-decoration: dashed;
+    color: white;
+}
+
+/* Estilos del logotipo */
+.logotipo {
+    position: fixed;
+    left: 90%;
+    top: 0%;
+    width: 100px;
+    height: 100px;
+}
+.logotipo a{
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.logotipo > img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+/* Contenedor del menú hamburguesa */
+.menu-hamburguesa {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2000;
+   
+}
+.menu-hamburguesa-label{
+     display:block;
+     margin:auto;
+     width: 100%;
+}
+/* Líneas del menú hamburguesa */
+.menu-hamburguesa-linea {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(135, 55, 240);
+    margin:  5px 0 ;
+    transition: all 0.3s ease;
+}
+
+/* Checkbox oculto */
+.menu-toggle {
+    display: none;
+}
+
+/* Transformaciones de las líneas del menú hamburguesa al estar marcado */
+.menu-toggle:checked ~ .contenedor-principal .menu-hamburguesa-label .menu-hamburguesa-linea:nth-child(1) {
+    transform: rotate(45deg);
+    top: 7px;
+    position: relative;
+}
+
+.menu-toggle:checked ~ .contenedor-principal .menu-hamburguesa-label .menu-hamburguesa-linea:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .contenedor-principal .menu-hamburguesa-label .menu-hamburguesa-linea:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -10px;
+    position: relative;
+}
+
+/* Mostrar el menú lateral cuando el checkbox está marcado */
+.menu-toggle:checked ~ .contenedor-principal .menu-lateral-temas {
+    display: flex;
+    z-index: 100;
+}
+
+
+
+/*-----------------------------CONTENIDO CENTRAL------------------------------*/
+.contenido-central{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    align-items: center;
+    gap: 50px;
+}
+
+.introduccion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    overflow: hidden;
+}
+
+.tarjetas-niveles{
+    display:flex;
+    gap: 5%;
+    width: 80%;
+    margin-top: 50px;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tarjeta-nivel{
+    
+    position: relative;
+    max-width:250px;
+    max-height:250px;
+    height: 400px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    border-radius:5px;
+    text-shadow: 0px 0px 5px rgb(29, 7, 89);
+    box-shadow: 0px 0px 25px 5px rgba(113, 0, 243, 0.968);
+    overflow: hidden;
+
+}
+
+.tarjeta-nivel:hover{
+    box-shadow: 0 0 20px 10px rgba(234, 234, 234, 0.694);
+    scale: 1.1;
+    color:white;
+    text-shadow: 2px 2px 4px rgb(64, 17, 111);
+} 
+.tarjeta-a{
+    display: block;
+    text-decoration: none;
+}
+.tarjeta-nivel >img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: contain;
+    overflow: hidden;
+}
+.tarjeta-nivel > h2{
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.tarjeta-parrafo{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 0px 0px 5px 5px;
+    color: white;
+}
+
+/* ..................................niveles------------------------------*/
+.titulo{
+    width: 100%;
+    margin-bottom: 5%;
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    text-shadow: 0px 0px 10px rgb(137, 90, 217);
+    background-color: rgb(255, 254, 255);
+    color: rgb(113, 13, 221); 
+    border-radius: 20px;
+    box-shadow: 0 0 5px 10px rgba(141, 130, 238, 0.493);
+}
+
+.temas-basico{
+    width: 60%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.temas-basico-ul{
+    overflow: hidden;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.temas-basico-a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+}
+.temas-basico-li{
+    list-style: none;
+    background-color: rgb(55, 33, 126);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.clase1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30%;
+    gap: 100px;
+}
+.clase1-contenedor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.introduccion-basico{
+    font-size: 2rem;
+    text-shadow: 0px 0px 10px rgb(42, 16, 144);
+   
+}
+
+.introduccion-lista{
+    font-size: 1.4rem;
+    width: 70%;
+    margin: auto;
+    padding: 5%;
+    color: rgb(103, 72, 161);
+    background-color: rgb(247, 246, 248);
+    border-radius: 50px;
+    border: 1px solid rgb(174, 0, 255);
+    box-shadow: 0px 0px 25px 10px rgb(145, 112, 216);
+}
+
+
+.clase1-pre-code{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.clase1-tema{
+    width: 90%;
+    font-size: 1.5rem;
+    overflow: hidden;
+    margin-top: 120px;
+    text-shadow: 0px 0px 6px rgb(35, 10, 110);
+}
+.clase1-tema> h2{
+    width: 250px;
+    text-align: center;
+    padding: 0;
+    font-size: 2.5rem;
+    border-radius: 15px;
+    text-shadow: 0px 0px 10px rgb(137, 90, 217);
+    background-color: rgb(255, 254, 255);
+    color: rgb(113, 13, 221);
+}
+
+pre{
+    background-color: rgb(55, 33, 126);
+    padding: 20px;
+    overflow-x: auto;
+    min-height: 100px;
+    border-radius: 50px;
+    margin: 50px;
+}
+pre:hover{
+  box-shadow: 0px 0px 10px 4px rgb(166, 242, 255);
+}
+code{
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.clase2{
+    width: 100%;
+    display: flex;
+    margin-top: 20%;
+    padding: 10px 0;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.clase-contenedor{
+    display: flex;
+    width: 100%;
+    padding-top: 5%;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.introduccion-basico-02{
+    width: 600px;
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+.transform-ol{
+   background-color: rebeccapurple;
+   padding: 60px;
+   text-align: left;
+   border-radius: 4px;
+}
+canvas{
+    border-radius: 15px;
+}
+.clase-titulo{
+    margin-top: 5%;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    text-shadow: 0px 0px 10px rgb(137, 90, 217);
+    background-color: rgb(255, 254, 255);
+    color: rgb(113, 13, 221);
+    
+    box-shadow: 0 0 5px 10px rgba(237, 224, 232, 0.761);
+}
+
+.clase2-pre-code{
+    width: 80%;
+    margin-top: 15%;
+}
+.clase1-pre-code > pre,code{
+    font-size: 1.3rem;
+}
+.clase3{
+    width: 100%;
+    height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
